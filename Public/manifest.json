@@ -1,0 +1,12 @@
+{
+	"name": "Basic_Chat_Commands",
+	"version_number": "0.0.1",
+	"website_url": "https://github.com/GymMed/Outward-Basic-Chat-Commands",
+	"description": "Provides basic chat commands to outward. Ex.: /follow",
+	"dependencies": [
+		"GymMed-Chat_Commands_Manager-0.0.1",
+		"GymMed-Mods_Communicator-1.2.0",
+		"sinai-dev-SideLoader-3.8.4",
+		"BepInEx-BepInExPack_Outward-5.4.19"
+	]
+}
