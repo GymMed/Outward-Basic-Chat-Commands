@@ -11,7 +11,7 @@
 		<img src="https://img.shields.io/thunderstore/dt/GymMed/Basic_Chat_Commands" alt="Thunderstore Downloads">
 	</a>
 	<a href="https://github.com/GymMed/Outward-Basic-Chat-Commands/releases/latest">
-		<img src="https://img.shields.io/thunderstore/v/GymMed/Basic-Chat-Commands" alt="Thunderstore Version">
+		<img src="https://img.shields.io/thunderstore/v/GymMed/Basic_Chat_Commands" alt="Thunderstore Version">
 	</a>
 	<a href="https://github.com/GymMed/Outward-Mods-Communicator/releases/latest">
 		<img src="https://img.shields.io/badge/Mods_Communicator-v1.2.0-D4BD00" alt="Mods Communicator Version">
@@ -19,7 +19,7 @@
 </div>
 
 <div align="center">
-	Provides basic user chat commands
+	Provides user with basic chat commands
 </div>
 
 ## How to use it
