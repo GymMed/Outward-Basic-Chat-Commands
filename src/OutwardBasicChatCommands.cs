@@ -30,7 +30,7 @@ namespace OutwardBasicChatCommands
         // Choose a NAME for your project, generally the same as your Assembly Name.
         public const string NAME = "Basic Chat Commands";
         // Increment the VERSION when you release a new version of your mod.
-        public const string VERSION = "0.0.1";
+        public const string VERSION = "0.0.2";
 
         // Choose prefix for log messages for quicker search and readablity
         public static string prefix = "[Basic-Chat-Command]";
@@ -55,7 +55,7 @@ namespace OutwardBasicChatCommands
             new Harmony(GUID).PatchAll();
 
             //EventBusSubscriber.AddSubscribers();
-            EventBusPublisher.SendAddFollowChatCommand();
+            EventBusPublisher.SendCommands();
         }
 
         // Update is called once per frame. Use this only if needed.

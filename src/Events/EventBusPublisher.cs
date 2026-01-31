@@ -1,4 +1,5 @@
 ﻿using Mono.Cecil;
+using OutwardBasicChatCommands.Events.Publishers;
 using OutwardBasicChatCommands.Managers;
 using OutwardBasicChatCommands.Utility.Enums;
 using OutwardBasicChatCommands.Utility.Helpers;
@@ -19,82 +20,24 @@ namespace OutwardBasicChatCommands.Events
         //other mods listener uid
         public const string ChatCommands_Listener = "gymmed.chat_commands_manager_*";
 
-        public static void SendAddFollowChatCommand()
+        public static void SendCommands()
         {
-            Dictionary<string, (string, string)> parameters = new()
-            {
-                {
-                    "characterName",
-                    ("Optional. Tries to follow character by name. If not provided tries to find first local character or lobby character.", null)
-                }
-            };
+            EnchantmentCommandsPublisher.SendAddEnchantmentRecipeItemsCommand();
+            EnchantmentCommandsPublisher.SendAddEnchantmentRecipesCommand();
+            EnchantmentCommandsPublisher.SendAddEnchantmentsCommand();
+            EnchantmentCommandsPublisher.SendAddBrokenEnchantmentsCommand();
 
-            Action<Character, Dictionary<string, string>> function = FollowCharacter;
+            FollowCommandsPublisher.SendAddFollowChatCommand();
 
-            var payload = new EventPayload
-            {
-                [ChatCommandsManagerParamsHelper.Get(ChatCommandsManagerParams.CommandName).key] = "follow",
-                [ChatCommandsManagerParamsHelper.Get(ChatCommandsManagerParams.CommandParameters).key] = parameters,
-                [ChatCommandsManagerParamsHelper.Get(ChatCommandsManagerParams.CommandAction).key] = function,
-                [ChatCommandsManagerParamsHelper.Get(ChatCommandsManagerParams.CommandDescription).key] = "Tries to find a player to follow. Searching is done starting from local characters and moving to lobby characters."
-            };
+            TimeCommandsPublisher.SendAddSetTimeCommand();
+            TimeCommandsPublisher.SendAddSetMinutesCommand();
+            //TimeCommandsPublisher.SendPictureModeCommand();
 
-            EventBus.Publish(ChatCommands_Listener, Event_AddCommand, payload);
-        }
+            ChatCommandsPublisher.SendAddMaxChatMessagesCommand();
 
-        public static void FollowCharacter(Character follower, Dictionary<string, string> arguments)
-        {
-            ChatPanel panel = follower?.CharacterUI?.ChatPanel;
+            SkillCommandsPublisher.SendAddSkillsCommand();
 
-            if(panel == null)
-            {
-                OBCC.LogMessage("EventBusPublisher@SendAddFollowChatCommand Tried to use missing chatPanel.");
-                return;
-            }
-
-            arguments.TryGetValue("characterName", out string charName);
-
-            if(string.IsNullOrWhiteSpace(charName))
-            {
-                UID mainChar = panel.LocalCharacter.UID;
-
-                Character first = CharacterManager.Instance.GetFirstLocalCharacter();            
-
-                if(first != null && first.UID != mainChar)
-                {
-                    FollowerDataManager.Instance.TryToFollow(panel.LocalCharacter, first);
-                    return;
-                }
-
-                Character second = CharacterManager.Instance.GetSecondLocalCharacter();            
-
-                if(second != null && second.UID != mainChar)
-                {
-                    FollowerDataManager.Instance.TryToFollow(panel.LocalCharacter, second);
-                    return;
-                }
-
-                Character other = CharacterHelpers.TryToFindOtherCharacterInLobby(panel.LocalCharacter);
-
-                if(other != null)
-                {
-                    FollowerDataManager.Instance.TryToFollow(panel.LocalCharacter, other);
-                    return;
-                }
-
-                ChatHelpers.SendChatLog(panel, "You are playing alone. There is nothing to follow.");
-                return;
-            }
-
-            Character otherByName = CharacterHelpers.TryToFindOtherCharacterInLobby(panel.LocalCharacter, charName);
-
-            if(otherByName != null)
-            {
-                FollowerDataManager.Instance.TryToFollow(panel.LocalCharacter, otherByName);
-                return;
-            }
-
-            ChatHelpers.SendChatLog(panel, $"Could not find other player by name {charName}!");
+            CharacterVisualsPublisher.SendAddSetVisualsCommand();
         }
     }
 }

@@ -18,6 +18,9 @@
         <PackageReference Include="Outward.SideLoader" Version="3.7.14" />
         <PackageReference Include="UnityEngine.Modules" Version="2020.3.26" />
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Utility\Exceptions\" />
+    </ItemGroup>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
       <Exec Command="call &quot;$(ProjectDir)..\Public\DontZip\placeBuild.bat&quot;" />

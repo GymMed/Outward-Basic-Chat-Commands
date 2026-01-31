@@ -1,8 +1,8 @@
 {
 	"name": "Basic_Chat_Commands",
-	"version_number": "0.0.1",
+	"version_number": "0.0.2",
 	"website_url": "https://github.com/GymMed/Outward-Basic-Chat-Commands",
-	"description": "Provides basic chat commands to outward. Ex.: /follow",
+	"description": "Provides basic chat commands to outward. Ex.: /follow , /setVisuals",
 	"dependencies": [
 		"GymMed-Chat_Commands_Manager-0.0.1",
 		"GymMed-Mods_Communicator-1.2.0",

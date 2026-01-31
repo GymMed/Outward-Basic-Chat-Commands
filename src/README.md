@@ -19,7 +19,7 @@
 </div>
 
 <div align="center">
-	Provides user with basic chat commands
+	Provides basic user chat commands
 </div>
 
 ## How to use it
@@ -40,6 +40,93 @@ canceled when the follower starts moving manually.<br>
 - Type <code>/follow</code> to follow a random nearby character (starting from
   the local player).
 - Type <code>/follow characterName</code> to follow a specific character.
+</details>
+
+<details>
+    <summary>Max Chat Messages</summary>
+Changes the amount of messages chat panel can contain.<br>
+
+**Usage:**
+- Type <code>/maxChatMessages</code> to show chat panel messages limit.
+- Type <code>/maxChatMessages --amount=90</code> to set max amount of how many messages chat panel can contain.
+</details>
+
+<details>
+    <summary>Set Character Visuals</summary>
+Changes how your current character looks.<br>
+
+**Usage:**
+- Type <code>/setVisuals 1 15 11 5 2</code> To change race = 1, hairStyle = 15, hairColor = 11, headVariation = 5 and gender = 2.
+</details>
+
+<details>
+    <summary>Skills data</summary>
+Shows skills information.<br>
+
+**Usage:**
+- Type <code>/skills</code> to show chat panel messages limit.
+- Type <code>/skills --type="1"</code> to show specific type. Available: 0 - All, 1 - Active, 2 - Passive, 3 - Cosmetic.
+</details>
+
+<details>
+    <summary>🧩<strong>【 Time 】</strong></summary>
+
+<details>
+    <summary>Set Time</summary>
+Sets current time.<br>
+
+**Usage:**
+- Type <code>/setTime 15:55</code> to set game time to 15 hours and 55 minutes.
+</details>
+
+<details>
+    <summary>Set Minutes</summary>
+Sets current hour minutes.<br>
+
+**Usage:**
+- Type <code>/setMinutes 55</code> to set game current hour minutes 55 minutes.
+</details>
+</details>
+
+
+<details>
+    <summary>🧩<strong>【 Enchantments 】</strong></summary>
+
+<details>
+    <summary>Enchantments Data</summary>
+Provides information about all enchantments.<br>
+
+**Usage:**
+- Type <code>/enchantments</code> to print all enchantments in detailed way.
+- Type <code>/enchantments --short="true"</code> to print all enchantments count.
+</details>
+
+<details>
+    <summary>Enchantments Recipes Data</summary>
+Provides information about all enchantments recipes.<br>
+
+**Usage:**
+- Type <code>/enchantmentRecipes</code> to print all enchantments recipes in detailed way.
+- Type <code>/enchantmentRecipes --short="true"</code> to print all enchantments recipes count.
+</details>
+
+<details>
+    <summary>Enchantments Recipes Items Data</summary>
+Provides information about all enchantments recipes items.<br>
+
+**Usage:**
+- Type <code>/enchantmentRecipeItems</code> to print all enchantments recipes items in detailed way.
+- Type <code>/enchantmentRecipeItems --short="true"</code> to print all enchantments recipes items count.
+</details>
+
+<details>
+    <summary>Broken Enchantments Data</summary>
+Provides information about all incorrectly added enchantments by modders.<br>
+
+**Usage:**
+- Type <code>/brokenEnchantments</code> to print all incorrectly added enchantments in detailed way.
+- Type <code>/brokenEnchantments --short="true"</code> to print all incorrectly added enchantments count.
+</details>
 </details>
 
 ## How to set up
