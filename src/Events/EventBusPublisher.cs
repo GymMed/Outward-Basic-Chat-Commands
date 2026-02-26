@@ -38,6 +38,8 @@ namespace OutwardBasicChatCommands.Events
             SkillCommandsPublisher.SendAddSkillsCommand();
 
             CharacterVisualsPublisher.SendAddSetVisualsCommand();
+
+            ModsCommunicatorPublisher.SendCfgToXmlCommand();
         }
     }
 }

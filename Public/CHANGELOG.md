@@ -1,5 +1,11 @@
 ## Changelog
 
+### Release 0.1.0 Version
+
+#### Added
+
+-   Added <code>cfgToXml</code> command,
+
 ### Release 0.0.2 Version
 
 #### Added

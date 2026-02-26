@@ -30,7 +30,7 @@ namespace OutwardBasicChatCommands
         // Choose a NAME for your project, generally the same as your Assembly Name.
         public const string NAME = "Basic Chat Commands";
         // Increment the VERSION when you release a new version of your mod.
-        public const string VERSION = "0.0.2";
+        public const string VERSION = "0.1.0";
 
         // Choose prefix for log messages for quicker search and readablity
         public static string prefix = "[Basic-Chat-Command]";

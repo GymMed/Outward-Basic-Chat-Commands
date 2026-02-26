@@ -64,7 +64,7 @@ Changes how your current character looks.<br>
 Shows skills information.<br>
 
 **Usage:**
-- Type <code>/skills</code> to show chat panel messages limit.
+- Type <code>/skills</code> to show currently all available skills in the game.
 - Type <code>/skills --type="1"</code> to show specific type. Available: 0 - All, 1 - Active, 2 - Passive, 3 - Cosmetic.
 </details>
 
@@ -127,6 +127,23 @@ Provides information about all incorrectly added enchantments by modders.<br>
 - Type <code>/brokenEnchantments</code> to print all incorrectly added enchantments in detailed way.
 - Type <code>/brokenEnchantments --short="true"</code> to print all incorrectly added enchantments count.
 </details>
+</details>
+
+<details>
+    <summary>🧩<strong>【 ModsCommunicator 】</strong></summary>
+
+<details>
+    <summary>Config to Xml</summary>
+Saves your current configuration as an XML file for the ModsCommunicator mod.
+Intended mainly for mod developers. Regular users should only lock the values
+they need, as locking everything may lead to unintended gameplay changes.<br>
+
+**Usage:**
+- Type <code>/cfgToXml</code> to store configs to default location:
+  <code>"BepInEx\config\gymmed.Mods_Communicator\Basic_Chat_Commands\PlayerConfigs.xml"</code>.
+- Type <code>/cfgToXml --filePath="yourPath"</code> to store configs to your provided path.
+</details>
+
 </details>
 
 ## How to set up
